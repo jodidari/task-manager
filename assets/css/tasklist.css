@@ -1,7 +1,5 @@
-form {
-    display: inline-block;
-}
 .form-group {
+	display: inline-block;
     text-align: center;
     padding-bottom: 25px;
 }

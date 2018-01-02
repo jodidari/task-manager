@@ -40,13 +40,11 @@
 	<link href="assets/css/generalcss.css" rel="stylesheet">
 	<script src="assets/js/dynamicforms.js">
 	</script>
-	<script src="assets/js/logout.js">
-	</script>
 	<script src="assets/js/dynamicforms2.js">
 	</script>
 	<script src="assets/js/notif.js">
 	</script>
-	<script>
+	<script src="assets/js/logout.js">
 	</script>
 	<script src="https://surveyjs.azureedge.net/0.12.35/survey.jquery.js">
 	</script>
@@ -68,7 +66,7 @@
 
 			<div class="sidebar-wrapper">
 				<div class="logo">
-					<a class="simple-text" href="#">Jodi task management system</a>
+					<a class="simple-text" href="#">Jodi task management system</a><span>Hello </span><span id="user-name"></span>
 				</div>
 
 
@@ -144,7 +142,7 @@
 
 
 							<li>
-								<a href="logout.php" id="logout">Log out</a>
+								<a href="#" id="log">Log out</a>
 							</li>
 						</ul>
 					</div>

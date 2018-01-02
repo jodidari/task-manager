@@ -1,7 +1,17 @@
 /*global $*/
 
 $(document).ready(function(){
-
+	
+	$.ajax({
+      url: "assets/js/get_info.js",
+      dataType: "script",
+    });
+	
+	$.ajax({
+      url: "assets/js/logout.js",
+      dataType: "script",
+    });
+	
 		//iterate through each textboxes and add keyup
 		//handler to trigger sum event
 		$(".txt").each(function() {

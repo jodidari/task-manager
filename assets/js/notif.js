@@ -1,8 +1,14 @@
 /* global $ */
 
 window.onload = function(){
-	$.css("borderColor", "");
+	
+	$.ajax({
+      url: "assets/js/logout.js",
+      dataType: "script",
+    });
+	
     $("#message-form").submit(function(event){
+		alert("clicked");
         event.preventDefault();
 		if ($("#recipients")==""){
 			alert("Enter a username or type all ");

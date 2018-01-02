@@ -1,8 +1,4 @@
 <!DOCTYPE html>
-
-<html lang="en">
-<!DOCTYPE html>
-
 <html lang="en">
 <head>
 	<meta charset="utf-8">
@@ -55,6 +51,8 @@
 	</script>
 	<script src="assets/js/jquery.backstretch.min.js">
 	</script>
+	<script src="assets/js/get_info.js">
+	</script>
 </head>
 <body>
 	<input type="hidden" id="date" name="date" class="date" value="CurrentTime">
@@ -65,49 +63,46 @@
 
 			<div class="sidebar-wrapper">
 				<div class="logo">
-					<a class="simple-text" href="#">Jodi task management system</a>
+					<a class="simple-text" href="mtemplate.html">Jodi task management system</a><span>Hello </span><span id="user-name"></span>
 				</div>
 
 
-				<ul class="nav">
+                <ul class="nav">
+                    <li>
+                        <a href="user.html">
+                            <i class="pe-7s-user"></i>
+                            <p>User Profile</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="createp.php">
+                            <i class="pe-7s-comment"></i>
+                            <p>Create Project </p>
+                        </a>
+                    </li>
 					<li>
-						<a href="mtemplate.html"><i class="pe-7s-graph"></i>
-
-						<p>Dashboard</p></a>
-					</li>
-
-
+                        <a href="viewproj.php">
+                            <i class="pe-7s-albums"></i>
+                            <p>View Projects</p>
+                        </a>
+                    </li>
 					<li>
-						<a href="user.html"><i class="pe-7s-user"></i>
+                        <a href="viewnotification.php">
+                            <i class="pe-7s-attention"></i>
+                            <p>View Notifications</p>
+                        </a>
+                    </li>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <li>
+                        <a href="rate.html">
+                            <i class="pe-7s-pen"></i>
+                            <p>Rate Sub-ordinates</p>
+                        </a>
+                    </li>
 
-						<p>User Profile</p></a>
-					</li>
-
-
-					<li>
-						<a href="createp.php"><i class="pe-7s-comment"></i>
-
-						<p>Create Project</p></a>
-					</li>
-					<li>
-						<a href="viewnotification.php"><i class="pe-7s-comment"></i>
-
-						<p>View Notifications</p></a>
-					</li>
-
-
-					<li style="list-style: none"><br>
-					<br>
-					<br>
-					</li>
-
-
-					<li>
-						<a href="rate.html"><i class="pe-7s-pen"></i>
-
-						<p>Rate Sub-ordinates</p></a>
-					</li>
-				</ul>
+                </ul>
 			</div>
 		</div>
 
@@ -141,7 +136,7 @@
 
 
 							<li>
-								<a href="logout.php" id="logout">Log out</a>
+								<a href="#" id="log">Log out</a>
 							</li>
 						</ul>
 					</div>
@@ -156,7 +151,7 @@
 							<h2 class="title">Notifications</h2>						
 						</div>
 	
-							<form method="post" id="message-form" class="message-form" name="message-form">
+							<form id="message-form" class="message-form" name="message-form">
 									<h5>Construct a notification</h5>
 									<p> Place a comma between different recipients or type all</p>										
 									<div class="row">

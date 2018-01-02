@@ -45,7 +45,7 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-sm-8 col-sm-offset-2 text">
-						<a href="mtemplate.html"><h1 style="color:white"><strong>Jodi's Task<br>
+						<a href="index.php"><h1 style="color:white"><strong>Jodi's Task<br>
 						Management System</strong></a>
 						</h1>
 						<p> Click the above to return to the main page</p>

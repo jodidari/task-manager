@@ -3,7 +3,6 @@ include ("config.php");
 session_start();
 $user = $_SESSION["id"];
 $query = "SELECT * FROM notif_table WHERE recipient_ids LIKE '%$user%' ORDER BY date_sent";
-//echo $query;
 $result = mysqli_query($link, $query);
 $table = "<tr>";
 while($row =mysqli_fetch_assoc($result)){

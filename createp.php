@@ -39,17 +39,12 @@
 	<link href="assets/css/rate.css" rel="stylesheet">
 	<script src="assets/js/dynamicforms.js">
 	</script>
-	<script src="assets/js/logout.js">
-	</script>
+	<script src="assets/js/logout.js"></script>
 	<script src="assets/js/dynamicforms2.js">
 	</script>
 	<script src="assets/js/poll.js">
 	</script>
-	<script src="assets/js/rate.js">
-	</script>
 	<script src="assets/js/createp.js">
-	</script>
-	<script>
 	</script>
 	<script src="https://surveyjs.azureedge.net/0.12.35/survey.jquery.js">
 	</script>
@@ -70,15 +65,20 @@
 		<div class="sidebar" data-color="purple" data-image="assets/img/download.jpg">
 			<div class="sidebar-wrapper">
 				<div class="logo">
-					<a class="simple-text" href="ptemplate.html">Jodi task management system</a>
+					<a class="simple-text" href="mtemplate.html">Jodi task management system</a><span>Hello: </span><span id="user-name"></span>
 				</div>
 
-
-				<ul class="nav">
+                <ul class="nav">
                     <li>
                         <a href="user.html">
                             <i class="pe-7s-user"></i>
                             <p>User Profile</p>
+                        </a>
+                    </li>
+					<li>
+                        <a href="viewproj.php">
+                            <i class="pe-7s-albums"></i>
+                            <p>View Projects</p>
                         </a>
                     </li>
                     <li>
@@ -89,7 +89,7 @@
                     </li>
 					<li>
                         <a href="viewnotification.php">
-                            <i class="pe-7s-bell"></i>
+                            <i class="pe-7s-attention"></i>
                             <p>View Notifications</p>
                         </a>
                     </li>
@@ -156,8 +156,7 @@
 								</div>
 
 
-								<div class="content">
-									<form action="/Egov-proj/assets/php/submitproj.phpnjj" class="createp-form" id="createp-form" method="post" name="createp-form">
+									<form class="createp-form" id="createp-form" name="createp-form">
 										<div class="row">
 											<div class="form-group">
 												<div class="col-md-4">
@@ -168,21 +167,6 @@
 
 											<div class="col-md-2">
 											</div>
-											<!--<div class="form-group">
-                                                <div class="col-md-2">
-                                                    <label for="form-fname">Project</label>
-                                                    <input class="form-fname form-control" id="form-fname" name="form-fname" placeholder="First name" type="text">
-                                                </div>
-                                            </div>
-
-
-                                            <div class="form-group">
-                                                <div class="col-md-2">
-                                                    <label  for="form-lname">Manager </label>
-                                                    <input class="form-lname form-control" id="form-lname" name="form-lname" placeholder="Last name" type="text">
-                                                </div>
-                                            </div>
-                                        </div>-->
 
 
 											<div class="form-group">
@@ -190,18 +174,7 @@
 													<label>Managers</label>
 
 													<div class="form-group input-group" style="padding-top: 9px;">
-														<select class="form-control" id="proj-man-name" name="proj-man-name">
-															<option value="1">
-																Default select
-															</option>
-
-															<option value="Anthony Hamilton">
-																Anthony Hamilton
-															</option>
-
-															<option value="Nyram Moodie">
-																Nyram Moodie
-															</option>
+														<select class="form-control" id="form-managers" class="form-managers" name="form-managers">
 														</select>
 													</div>
 												</div>
@@ -212,6 +185,8 @@
 												<div class="col-md-10">
 													<label for="form-desc">Description</label> <input class="form-desc form-control" id="form-desc" name="form-desc" placeholder="Enter a description" style="height:150px" type="text">
 												</div>
+											</div>	
+												
 											</div>
 
 
@@ -241,62 +216,47 @@
 
 													<div class="form-group input-group">
 														<select class="form-control" id="form-programmers" name="form-programmers">
-															<option value="">
-																Default select
-															</option>
-
-															<option value="">
-																John Brown
-															</option>
-
-															<option value="">
-																Jane Smith
-															</option>
-
-															<option value="">
-																Mark Stephens
-															</option>
 														</select>
-														<span class="input-group-btn">+<button class="btn btn-default btn-add" id="options" type="button"></span>
-														<!--<span class="input-group-btn"><span class="input-group-btn"><span class="input-group-btn"><span class="input-group-btn" style="color:black">+</span></span></span></span></button></span>-->
-
+														<span class="input-group-btn"><button class="btn btn-default btn-add" id="options" type="button">+</span>
 														<ul class="list-unstyled" id="names">
 														</ul>
 													</div>
 												</div>
 											</div>
-
+											
+											<span id="word" class="word" name="word"></span>
 
 											<div class="row">
 												<button class="btn btn-primary col-md-offset-4 col-md-2 col-md-offset-5" data-target=".bs-example-modal-sm" data-toggle="modal" type="button">Create</button>
-
 												<div aria-labelledby="mySmallModalLabel" class="modal fade bs-example-modal-sm" id="modal" role="dialog" tabindex="-1">
 													<div class="modal-dialog modal-sm" role="document">
 														<div class="modal-content" style="text-align:center">
 															<div class="modal-header">
 																<span class="close" data-dismiss="modal" id="close">&times;</span> Do you want to submit?
 															</div>
-															<button class="btn btn-primary btn-md" id="sub" name="sub" style="margin:0 0 10px 2px" type="button">Create</button> <button class="btn btn-primary btn-md" data-dismiss="modal" style="margin:0 0 10px 2px" type="button">Close</button>
-														<span id="word"></span>
+															<button class="btn btn-primary btn-md" id="subb" name="subb" style="margin:0 0 10px 2px" type="button">Create</button> <button class="btn btn-primary btn-md" data-dismiss="modal" style="margin:0 0 10px 2px" type="button">Close</button>
+															<div>
+															
+															</div>
 														</div>
 													</div>
 												</div>
 											</div>
-										</div>
+											
 									</form>	
 								</div>
 							</div>
 						</div>
 					</div>
-				</div>
-			</div>
+			
 
 
 			<footer class="footer">
 				<div class="container-fluid">
 				</div>
 			</footer>
-		</div>
-	</div>
+			</div>
+			</div>
+			</div>
 </body>
 </html>

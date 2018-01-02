@@ -53,7 +53,7 @@ else {
 					session_start();
 					$_SESSION["id"] = $pid_db[0];
 				}
-				else if (strcmp("$title_db[0]","Programmer")!=0) {
+				else if (strcmp("$title_db[0]","Programmer")==0) {
 					$message = array(
 							"result" => "Programmer"
 					);
@@ -63,6 +63,7 @@ else {
 				else{
 					$message = array(
 						"id"=> "Success",
+						"title"=>"$title_db[0]",
 						"result" => "Contact Manager"
 					);
 				}

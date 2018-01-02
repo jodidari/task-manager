@@ -40,8 +40,6 @@
 	</script>
 	<script src="assets/js/logout.js">
 	</script>
-	<script src="assets/js/dynamicforms2.js">
-	</script>
 	<script src="assets/js/poll.js">
 	</script>
 	<script src="assets/js/rate.js">
@@ -83,26 +81,40 @@
 		<div class="sidebar" data-color="purple" data-image="assets/img/download.jpg">
 			<div class="sidebar-wrapper">
 				<div class="logo">
-					<a class="simple-text" href="ptemplate.html">Jodi task management system</a>
+					<a class="simple-text" href="mtemplate.html">Jodi task management system</a><span>Hello </span><span id="user-name"></span>
 				</div>
-				<ul class="nav">
+                <ul class="nav">
+                    <li>
+                        <a href="user.html">
+                            <i class="pe-7s-user"></i>
+                            <p>User Profile</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="createp.php">
+                            <i class="pe-7s-comment"></i>
+                            <p>Create Project </p>
+                        </a>
+                    </li>
 					<li>
-						<a href="user.html"><i class="pe-7s-user"></i>
-						<p>User Profile</p></a>
-					</li>
+                        <a href="viewproj.php">
+                            <i class="pe-7s-albums"></i>
+                            <p>View Projects</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="notification.php">
+                            <i class="pe-7s-bell"></i>
+                            <p>Create Notifications</p>
+                        </a>
+                    </li>
 					<li>
-						<a href="createp.php"><i class="pe-7s-comment"></i>
-						<p>Create Project</p></a>
-					</li>
-					<li>
-						<a href="notification.php"><i class="pe-7s-bell"></i>
-						<p>Create Notifications</p></a>
-					</li>
-					<li>
-						<a href="viewnotification.php"><i class="pe-7s-bell"></i>
-						<p>View Notifications</p></a>
-					</li>
-				</ul>
+                        <a href="viewnotification.php">
+                            <i class="pe-7s-attention"></i>
+                            <p>View Notifications</p>
+                        </a>
+                    </li>
+                </ul>
 			</div>
 		</div>
 		<div class="main-panel">
@@ -142,19 +154,7 @@
 									<div class="form-group col-md-5">
 										<p>Select sub-ordinate</p>
 										<div class="input-group input-group-multiple-selectp col-xs-8">
-											<select class="form-control" name="values">
-												<option value="">
-													Select one
-												</option>
-												<option value="1">
-													John Brown
-												</option>
-												<option value="2">
-													Jane Smith
-												</option>
-												<option value="2">
-													Mark Stephens
-												</option>
+											<select class="form-control" id="form-programmers" name="values">
 											</select>
 										</div>
 									</div>
@@ -162,16 +162,7 @@
 									<div class="form-group col-md-5">
 										<p>Select project</p>
 										<div class="input-group input-group-multiple-selectp col-xs-8">
-											<select class="form-control" name="values">
-												<option value="">
-													Select one
-												</option>
-												<option value="1">
-													Option 1
-												</option>
-												<option value="2">
-													Option 2
-												</option>
+											<select class="form-control" id="form-project" name="values">
 											</select>
 										</div>
 									</div>

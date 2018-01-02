@@ -1,134 +1,113 @@
 <!DOCTYPE html>
 
 <html lang="en">
+<!DOCTYPE html>
+
+<html lang="en">
 <head>
-	<meta charset="utf-8"><!---->
+	<meta charset="utf-8">
 	<meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
 
-	<title>Jodi task management system</title>
+	<title>Jodi Task Management System</title>
 	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport'>
-	<meta content="width=device-width" name="viewport"><!-- Bootstrap core CSS     -->
+	<meta content="width=device-width" name="viewport">
+	<meta content="no-cache" http-equiv="pragma"><!-- Bootstrap core CSS     -->
 	<link href="assets/css/bootstrap.min.css" rel="stylesheet"><!-- Animation library for notifications   -->
-	<link href="assets/css/animate.min.css" rel="stylesheet"><!--  Light Bootstrap Table core CSS    -->
+	<link href="assets/css/animate.min.css" rel="stylesheet">
+	<script src="assets/js/logout.js">
+	</script><!--  Light Bootstrap Table core CSS    -->
 	<link href="assets/css/light-bootstrap-dashboard.css" rel="stylesheet"><!--     Fonts and icons     -->
 	<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 	<link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300' rel='stylesheet' type='text/css'>
 	<link href="assets/css/pe-icon-7-stroke.css" rel="stylesheet"><!--   Core JS Files   -->
-	<link href="assets/css/general.css" rel="stylesheet">
-	<script src="assets/js/logout.js">
-	</script>
-	<script src="assets/js/bootstrap.min.js" type="text/javascript"></script>
-	
+
 	<script src="assets/js/jquery-1.10.2.js" type="text/javascript">
 	</script>
-
-	<script src="chttps://cdnjs.cloudflare.com/ajax/libs/chartist/0.11.0/chartist.js" type="text/javascript&quot;">
+	<script src="assets/js/bootstrap.min.js" type="text/javascript">
 	</script><!--  Checkbox, Radio & Switch Plugins -->
 
 	<script src="assets/js/bootstrap-checkbox-radio-switch.js">
 	</script><!--  Charts Plugin -->
 
 	<script src="assets/js/chartist.min.js">
-	</script>
-	<script src="assets/css/chartist.min.css">
 	</script><!--  Notifications Plugin    -->
 
 	<script src="assets/js/bootstrap-notify.js">
 	</script><!-- Light Bootstrap Table Core javascript and methods for Demo purpose -->
 
 	<script src="assets/js/light-bootstrap-dashboard.js">
-	</script><!-- Light Bootstrap Table DEMO methods, don't include it in your project! -->
-	<script src="https://www.gstatic.com/charts/loader.js" type="text/javascript">
 	</script>
-	<script src="assets/js/gantt.js">
-	</script>
+	<link href="assets/css/generalcss.css" rel="stylesheet">
 	<script src="assets/js/dynamicforms.js">
 	</script>
 	<script src="assets/js/logout.js">
 	</script>
 	<script src="assets/js/dynamicforms2.js">
 	</script>
-	<script src="assets/js/poll.js">
+	<script src="assets/js/notif.js">
 	</script>
-	<script src="assets/js/tasklist.js">
+	<script>
 	</script>
-	<script src="assets/css/tasklist.css">
-	</script><!-- CHeck for duplication -->
+	<script src="https://surveyjs.azureedge.net/0.12.35/survey.jquery.js">
+	</script>
 	<link href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.0/jquery-confirm.min.css" rel="stylesheet">
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.0/jquery-confirm.min.js">
 	</script>
 	<script src="assets/js/jquery.backstretch.min.js">
 	</script>
+	<script src="assets/js/getproj.js">
+	</script>
+	
 </head>
-
 <body>
-	<?php
-	    include ("/php/config.php");
-	    session_start();
-	    ?>
-
-	<form>
-		<input id="date" name="date" type="hidden" value="CurrentTime"><input id="time" name="time" type="hidden" value="CurrentDate">
-	</form>
-
-
+	<input type="hidden" id="date" name="date" class="date" value="CurrentTime">
 	<div class="wrapper">
 		<div class="sidebar" data-color="purple" data-image="assets/img/download.jpg">
+			<!--   you can change the color of the sidebar using: data-color="blue | azure | green | orange | red | purple" -->
+
+
 			<div class="sidebar-wrapper">
 				<div class="logo">
-					<a class="simple-text" href="mteplate.html">Jodi task management system</a>
-					<span> Hello </span><span id="user-name"></span>
+					<a class="simple-text" href="#">Jodi task management system</a><span>Hello </span><span id="user-name"></span>
 				</div>
 
 
-				<ul class="nav">
+                <ul class="nav">
+                    <li>
+                        <a href="user.html">
+                            <i class="pe-7s-user"></i>
+                            <p>User Profile</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="createp.php">
+                            <i class="pe-7s-comment"></i>
+                            <p>Create Project </p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="notification.php">
+                            <i class="pe-7s-bell"></i>
+                            <p>Create Notifications</p>
+                        </a>
+                    </li>
 					<li>
-						<a href="user.html"><i class="pe-7s-user"></i>
+                        <a href="viewnotification.php">
+                            <i class="pe-7s-attention"></i>
+                            <p>View Notifications</p>
+                        </a>
+                    </li>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <li>
+                        <a href="rate.html">
+                            <i class="pe-7s-pen"></i>
+                            <p>Rate Sub-ordinates</p>
+                        </a>
+                    </li>
 
-						<p>User Profile</p></a>
-					</li>
-
-
-					<li>
-						<a href="createp.php"><i class="pe-7s-comment"></i>
-
-						<p>Create Project</p></a>
-					</li>
-
-
-					<li>
-						<a href="viewproj.php"><i class="pe-7s-albums"></i>
-
-						<p>View Projects</p></a>
-					</li>
-
-
-					<li>
-						<a href="notification.php"><i class="pe-7s-bell"></i>
-
-						<p>Create Notifications</p></a>
-					</li>
-
-
-					<li>
-						<a href="viewnotification.php"><i class="pe-7s-attention"></i>
-
-						<p>View Notifications</p></a>
-					</li>
-
-
-					<li style="list-style: none"><br>
-					<br>
-					<br>
-					</li>
-
-
-					<li>
-						<a href="rate.html"><i class="pe-7s-pen"></i>
-
-						<p>Rate Sub-ordinates</p></a>
-					</li>
-				</ul>
+                </ul>
 			</div>
 		</div>
 
@@ -162,7 +141,7 @@
 
 
 							<li>
-								<a  href="#" id="log">Log out</a>
+								<a href="#" id="log">Log out</a>
 							</li>
 						</ul>
 					</div>
@@ -172,45 +151,34 @@
 
 			<div class="content">
 				<div class="container-fluid">
-					<div class="row">
-						<div class="col-md-12">
-							<div id="chart_div">
-							</div>
+					<div class="card">
+						<div class="header">
+							<h2 class="title">Projects</h2>	
+							<h4> Click a project name then scroll for more info</h4>
 						</div>
-					</div>
-
-
-					<div class="row">
-						<div class="col-md-5">
-							<div class="form-group">
-								<h3>Personal tasks</h3>
-
-
-								<form role="form">
-									<input class="form-control" name="task" placeholder="Your Task" type="text">
-								</form>
-								<br>
-								<button class="btn btn btn-primary" style="color: #000" type="button">Add</button>
+	
+							<table id="projects">
+							<tr>
+									<th>Project Name</th>
+									<th>Project Manager</th>
+									<th>Attached Programmers</th>
+									<th>End Date</th>
+									
+								</tr>
+							</table>
+							
+							<div id="result">
 							</div>
+				
 
 
-							<div>
-							</div>
-
-
-							<ul class="list-unstyled" id="todo">
-							</ul>
-						</div>
-					</div>
-
-
-					<footer class="footer">
-						<div class="container-fluid">
-						</div>
-					</footer>
+			<footer class="footer">
+				<div class="container-fluid">
 				</div>
-			</div>
+			</footer>
 		</div>
+	</div>
+	</div>
 	</div>
 </body>
 </html>
